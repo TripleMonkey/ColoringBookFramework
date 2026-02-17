@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="24512" systemVersion="25C56" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Book" representedClassName="Book" syncable="YES">
+        <attribute name="cdCoverImageName" optional="YES" attributeType="String"/>
+        <attribute name="cdDescription" optional="YES" attributeType="String"/>
+        <attribute name="cdID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="cdProductID" optional="YES" attributeType="String"/>
+        <attribute name="cdPurchaseDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="cdSortOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="cdTitle" optional="YES" attributeType="String"/>
+        <relationship name="cdPages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Page" inverseName="cdBook" inverseEntity="Page"/>
+    </entity>
+    <entity name="Page" representedClassName="Page" syncable="YES">
+        <attribute name="cdDrawingData" optional="YES" attributeType="Binary"/>
+        <attribute name="cdID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="cdLastModified" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="cdPageNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="cdBook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="cdPages" inverseEntity="Book"/>
+    </entity>
+</model>
